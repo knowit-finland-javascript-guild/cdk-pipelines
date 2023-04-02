@@ -1,0 +1,20 @@
+- Sandbox login
+  myapps.microsoft.com
+
+- Create Local Hello World
+
+- Create pipeline
+
+* Add CodeCommit
+* Create Pipeline
+* Add Prod Env
+
+- https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.pipelines-readme.html#confirm-permissions-broadening
+
+- Add Stag Env
+
+* Add approval
+
+- Add SNS
+
+* AWS Chatbot
