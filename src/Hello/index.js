@@ -1,3 +1,3 @@
 exports.handler = async () => ({
-  body: "Hello world",
+  body: "Hello world v2",
 });
