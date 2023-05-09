@@ -81,5 +81,6 @@ export class CdkPipelineStack extends Stack {
     const prodStage = this.pipeline.addStage(
       new AppStage(this, "Production", { username: this.username })
     );
+    prodStage.addPre(new pipelines.ManualApprovalStep("Production.Promote"));
   }
 }
