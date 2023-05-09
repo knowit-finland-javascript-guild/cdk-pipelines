@@ -33,6 +33,7 @@ export class CdkPipelineStack extends Stack {
 
     this.addStagingStage();
     this.addTests();
+    this.addProductionStage();
   }
 
   private initRepository() {
@@ -73,6 +74,12 @@ export class CdkPipelineStack extends Stack {
         commands: ["npm ci", "npm test"],
         input: this.source,
       })
+    );
+  }
+
+  private addProductionStage() {
+    const prodStage = this.pipeline.addStage(
+      new AppStage(this, "Production", { username: this.username })
     );
   }
 }
