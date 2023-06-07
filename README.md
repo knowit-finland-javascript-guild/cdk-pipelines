@@ -18,6 +18,8 @@ Ensure your Node.js version is >=18 with `node -v`. If not, it's time to upgrade
 
 ## Prerequisites
 
+_The tutorial is authored using cli on MacOS Z shell. Some steps or commands may be different depending on your OS environment._
+
 1. Clone respository
 
 ```
@@ -87,7 +89,7 @@ Browse to the output URL and see `Hello world`
 ## 2. Deploy pipeline for Hello World
 
 ```
-npx cdk deploy --context username=n00b n00b-pipeline-hello`
+npx cdk deploy --context username=n00b n00b-pipeline-hello
 ```
 
 View your CodePipeline in AWS console
@@ -105,7 +107,7 @@ git remote add pipeline codecommit::eu-north-1://n00b-pipeline-hello
 2.  Make initial commit to start pipeline
 
 ```
-git push -f pipeline `git branch --show-current`:master
+git push -f pipeline $(git branch --show-current):master
 ```
 
 3.  Wait for pipeline to finish deployment to staging...
