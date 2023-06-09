@@ -75,13 +75,13 @@ _The tutorial is authored using cli on MacOS Z shell. Some steps or commands may
 Deploy app
 
 ```
-npx cdk deploy --context username=n00b n00b-app-hello`
+   npx cdk deploy --context username=n00b n00b-app-hello
 ```
 
 After deployment, see Outputs section
 
 ```
-n00b-app-hello.HelloApiEndpoint91438085 = https://nf2azokp2g.execute-api.eu-north-1.amazonaws.com/prod/
+   n00b-app-hello.HelloApiEndpoint91438085 = https://nf2azokp2g.execute-api.eu-north-1.amazonaws.com/prod/
 ```
 
 Browse to the output URL and see `Hello world`
@@ -89,7 +89,7 @@ Browse to the output URL and see `Hello world`
 ## 2. Deploy pipeline for Hello World
 
 ```
-npx cdk deploy --context username=n00b n00b-pipeline-hello
+   npx cdk deploy --context username=n00b n00b-pipeline-hello
 ```
 
 View your CodePipeline in AWS console
@@ -101,13 +101,13 @@ https://eu-north-1.console.aws.amazon.com/codesuite/codepipeline/pipelines/
 1.  Add git remote from Output
 
 ```
-git remote add pipeline codecommit::eu-north-1://n00b-pipeline-hello
+   git remote add pipeline codecommit::eu-north-1://n00b-pipeline-hello
 ```
 
 2.  Make initial commit to start pipeline
 
 ```
-git push -f pipeline $(git branch --show-current):master
+   git push -f pipeline $(git branch --show-current):master
 ```
 
 3.  Wait for pipeline to finish deployment to staging...
@@ -123,7 +123,6 @@ Find the staging site URL from AWS Console > CloudFormation > Staging-myname-hel
 1.  Add test step in `CdkPipelineStack.ts`
 
 ```
-
 private addTests() {
   this.stagStage.addPre(
     new ShellStep("Hello.Test", {
@@ -138,9 +137,7 @@ private addTests() {
 2.  Add init function inside constructor
 
 ```
-
-this.addTests()
-
+   this.addTests()
 ```
 
 > Checkpoint: `git switch step-2`
@@ -148,7 +145,7 @@ this.addTests()
 3.  Commit and push changes
 
 ```
-git push -f pipeline $(git branch --show-current):master
+   git push -f pipeline $(git branch --show-current):master
 ```
 
 4.  Watch pipeline running tests before staging deployment
@@ -163,13 +160,12 @@ Pipeline is running automatically all tests from `/test` folder. Open `HelloStac
 private addProductionStage() {
   const prodStage = this.pipeline.addStage(new AppStage(this, "Production"));
 }
-
 ```
 
 2.  Add init function inside constructor
 
 ```
-this.addProductionStage()
+   this.addProductionStage()
 ```
 
 > Checkpoint: `git switch step-3`
@@ -221,9 +217,7 @@ That's all folks!
 # Clean up
 
 ```
-
-npx cdk destroy --context username=n00b n00b-pipeline-hello n00b-app-hello
-
+   npx cdk destroy --context username=n00b n00b-pipeline-hello n00b-app-hello
 ```
 
 # Advanced concepts
