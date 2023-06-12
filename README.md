@@ -222,4 +222,8 @@ That's all folks!
 
 # Advanced concepts
 
+[CDK Pipelines and ECS Blue/Green Deployment](https://towardsaws.com/creating-aws-codepipeline-using-aws-cdk-6d6895d56cee)
+
 [Automating Cross-account CI/CD Pipelines Using AWS CDK v2](https://nordcloud.com/tech-community/automating-cicd-pipelines/)
+
+
